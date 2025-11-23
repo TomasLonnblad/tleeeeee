@@ -12,16 +12,19 @@ const Wizard = React.memo(function Wizard(props) {
 
   useFrame((state) => {
     modelRef.current.rotation.y =
-      -0.1 + Math.sin(state.clock.elapsedTime) * 0.25;
+   -0.35 + Math.sin(state.clock.elapsedTime) * 0.23;
   });
 
 
   return (
-    <group {...props} dispose={null}>
+
           <group ref={modelRef}>
-      <group rotation={[Math.PI / -2.3, 0.01, -0.6]}>
-        <group scale={-0.93}>
-          <group scale={0.0075}>
+    <group {...props} dispose={null}>
+  
+      <group rotation={[Math.PI / 1.8, 0, 2.3]}>
+        <group scale={1.201}>
+          <group scale={0.0055}>
+         
             <group rotation={[Math.PI, 0, 0]} scale={110.41}>
               <mesh
                 castShadow
@@ -149,22 +152,26 @@ const Wizard = React.memo(function Wizard(props) {
                 geometry={nodes.Walls_Walls_0.geometry}
                 material={materials.Walls}
               />
- 
+            </group>
+        </group>       </group>  
+        </group>
+      </group>
       <mesh
         castShadow
         receiveShadow
         geometry={nodes['tripo_node_d5d7a45d-0f3d-443e-a721-a52008c88198'].geometry}
         material={materials['tripo_mat_d5d7a45d-0f3d-443e-a721-a52008c88198']}
-        position={[-7.5, 7.71, 1.095]}
-        rotation={[-0.008, -0.046, 0.05]}
-        scale={[6.91, 21.253, 7.332]}
+        position={[1.49, 1.247, -2.0]}
+        rotation={[0.15, -2.5, 0.15]}
+        scale={[4.15, 4.6, 4.732]}
       />
-    </group>
-            </group>
-          </group>
-        </group>
-      </group>
+
+             
+   
 </group>
+
+   
+
   );
 })
 export default Wizard;
